@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi tien te</title>
+</head>
+<body>
+<h1>Chuyển đổi tiền tệ</h1>
+<p>
+    <h3> Amount</h3>
+    <input type="text" id="amount" value="">
+</br>
+<h3>From Currency</h3>
+<select name =" currency1" id="currency1">
+    <option value=""> Choose a currency</option>
+    <option value="VND">Vietnam Dong</option>
+    <option value="USD">US Dollar</option>
+    <option value="GBP">British Pound</option>
+</select>
+</br>
+<h3>To Currency</h3>
+<select name =" currency2" id="currency2">
+    <option value=""> Choose a currency</option>
+    <option value="VND">Vietnam Dong</option>
+    <option value="USD">US Dollar</option>
+    <option value="GBP">British Pound</option>
+</select>
+</br>
+</br>
+<button type="button" onclick=" convert()" id="btnConvert">Convert</button>
+</br>
+</br>
+
+
+</p>
+<script>
+    function convert()
+    {
+        var currency = document.getElementById('amount').value;
+        var x = currency1.options[currency1.selectedIndex].value;
+        var y = currency2.options[currency2.selectedIndex].value;
+
+        var result;
+
+        if (x == "USD" && y == "VND"){
+            result = parseFloat(currency) * 23000;
+            alert('Kết quả là' + ' ' + result);
+        }
+
+         if (x == "GBP" && y == "VND")
+        {
+            result = parseFloat(currency) * 30000;
+            alert('Kết quả là' + ' ' + result);
+        }
+        if (x == "VND" && y == "USD")
+        {
+            result = parseFloat(currency) / 23000;
+            alert('Kết quả là' + ' ' + result);
+        }
+         if (x == "VND" && y =="GBP")
+        {
+            result = parseFloat(currency) / 30000;
+            alert('Kết quả là' + ' ' + result);
+        }
+
+         if (x == "USD" && y == "GBP")
+        {
+            result = parseFloat(currency) * 0.79;
+            alert('Kết quả là' + ' ' + result);
+        }
+
+         if (x == "GBP" && y == "USD")
+        {
+            result = parseFloat(currency) * 1.27;
+            alert('Kết quả là' + ' ' + result);
+        }
+
+
+    };
+</script>
+
+</body>
+</html>
